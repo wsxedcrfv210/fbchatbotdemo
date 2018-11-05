@@ -57,7 +57,7 @@ def send_message(recipient_id, response):
     """Send a response to Facebook"""
     payload = {
         'message': {
-            'text': text
+            'text': response
         },
         'recipient': {
             'id': recipient_id
