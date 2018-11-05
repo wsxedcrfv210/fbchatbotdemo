@@ -17,7 +17,7 @@ def receive_message():
         token_sent = request.args.get("hub.verify_token")
         return verify_fb_token(token_sent)
     #if the request was not get, it must be POST and we can just proceed with sending a message back to user
-    if reques.method == 'POST':
+    if request.method == 'POST':
         # get whatever message a user sent the bot
        output = request.get_json()
        for event in output['entry']:
