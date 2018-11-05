@@ -4,8 +4,8 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 import os 
 app = Flask(__name__)
-ACCESS_TOKEN = 'ACCESS_TOKEN'   #ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
-VERIFY_TOKEN = 'VERIFY_TOKEN'   #VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']   #ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+VERIFY_TOKEN = os.environ['VERIFY_TOKEN']   #VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 bot = Bot (ACCESS_TOKEN)
 
 #We will receive messages that Facebook sends our bot at this endpoint 
@@ -41,7 +41,7 @@ def verify_fb_token(token_sent):
     #if they match, allow the request, else return an error 
     if token_sent == VERIFY_TOKEN:
         return request.args.get("hub.challenge")
-    return 'Invalid verification token'
+    return '1196489381'
 
 
 #chooses a random message to send to the user
