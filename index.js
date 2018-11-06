@@ -14,6 +14,6 @@ bot.onEvent(async context => {
 
 const server = createServer(bot, { verifyToken: config.verifyToken });
 
-server.listen(process.env.PORT || 5000, () => {
-  console.log('server is running on 5000 port...');
+server.listen(config.port, function () {
+  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
