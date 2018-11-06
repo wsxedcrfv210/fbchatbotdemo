@@ -32,6 +32,6 @@ bot.onEvent(async context => {
 
 const server = createServer(bot, { verifyToken: config.verifyToken });
 
-server.listen(5000, () => {
-  console.log('server is running on 5000 port...');
+server.listen(process.env.PORT || 5000, () => {
+  console.log('server is running');
 });
