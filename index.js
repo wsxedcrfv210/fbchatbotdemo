@@ -28,6 +28,10 @@ bot.onEvent(async context => {
     }
   ],
 });
+  if (context.event.message ==='我想問問題'){
+   await context.sendText('test') 
+  };
+
 });
 
 const server = createServer(bot, { verifyToken: config.verifyToken });
