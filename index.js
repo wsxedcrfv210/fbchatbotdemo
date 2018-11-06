@@ -9,11 +9,29 @@ const bot = new MessengerBot({
 });
 
 bot.onEvent(async context => {
-  await context.sendText('Hello World');
+  await context.sendText('你好！請問有什麼可以幫忙的嗎!', {
+  quick_replies: [
+    {
+      content_type: 'text',
+      title: '我想問問題',
+      payload: json.dumps({"next": "ask_question"})
+    },
+    {
+      content_type: 'text',
+      title: '常見問題',
+      payload: json.dumps({"next": "choose_question_type"})
+    },
+    {
+      content_type: 'text',
+      title: '客服資訊',
+      payload: json.dumps({"next": "information"})
+    }
+  ],
+});
 });
 
 const server = createServer(bot, { verifyToken: config.verifyToken });
 
-server.listen(process.env.PORT || 5000, () => {
+server.listen(5000, () => {
   console.log('server is running on 5000 port...');
 });
