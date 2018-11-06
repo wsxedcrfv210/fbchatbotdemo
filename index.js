@@ -14,17 +14,17 @@ bot.onEvent(async context => {
     {
       content_type: 'text',
       title: '我想問問題',
-      payload: json.dumps({"next": "ask_question"})
+      payload: {"next": "ask_question"}
     },
     {
       content_type: 'text',
       title: '常見問題',
-      payload: json.dumps({"next": "choose_question_type"})
+      payload: {"next": "choose_question_type"}
     },
     {
       content_type: 'text',
       title: '客服資訊',
-      payload: json.dumps({"next": "information"})
+      payload: {"next": "information"}
     }
   ],
 });
